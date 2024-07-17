@@ -35,6 +35,14 @@
             height: auto;
         }
     </style>
+    <script>
+        // Redirect if user hasn't visited index.html
+        window.onload = function() {
+            if (sessionStorage.getItem("userVisited") !== "true") {
+                window.location.href = "index.html";
+            }
+        };
+    </script>
 </head>
 <body>
     <h1>snaman.xyz</h1>
