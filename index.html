@@ -41,14 +41,10 @@
         }
     </style>
     <script>
-        // Save session on page load
-        window.onload = function() {
-            sessionStorage.setItem("userVisited", "true");
-        };
-
         function askForPassword() {
             var password = prompt("Please enter the password:");
             if (password === "teamocaro") {
+                sessionStorage.setItem("authenticated", "true");
                 window.location.href = "page1.html";
             } else {
                 alert("Incorrect password. Access denied.");
@@ -61,7 +57,7 @@
     <hr>
     <p>Static web page for educational purposes</p>
     <p class="link-text">
-        <a onclick="askForPassword()">- Go to <b><i>love</i></b> page</a>
+        <a onclick="askForPassword()">Go to <b><i>love</i></b> page</a>
     </p>
 </body>
 </html>

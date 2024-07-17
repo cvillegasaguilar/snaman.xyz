@@ -36,9 +36,10 @@
         }
     </style>
     <script>
-        // Redirect if user hasn't visited index.html
+        // Redirect if user hasn't authenticated
         window.onload = function() {
-            if (sessionStorage.getItem("userVisited") !== "true") {
+            if (sessionStorage.getItem("authenticated") !== "true") {
+                alert("You must enter the correct password first.");
                 window.location.href = "index.html";
             }
         };
