@@ -9,7 +9,7 @@
             font-family: "Times New Roman", Times, serif;
             margin: 0;
             padding: 0;
-            background-color: #134e4a; /* Dark Slate Gray */
+            background-color: #134e4a; /* New Dark Teal background color */
             color: #ffffff; /* White text for contrast */
             display: flex;
             flex-direction: column;
@@ -37,13 +37,26 @@
         a {
             color: #ffffff; /* White text for contrast */
             text-decoration: none;
+            cursor: pointer;
         }
     </style>
+    <script>
+        function askForPassword() {
+            var password = prompt("Please enter the password:");
+            if (password === "teamocaro") {
+                window.location.href = "page1.html";
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>snaman.xyz</h1>
     <hr>
     <p>Static web page for educational purposes</p>
-    <p class="link-text"><a href="page1.html">Go to <b><i>love</i></b> page</a></p>
+    <p class="link-text">
+        <a onclick="askForPassword()">Go to <b><i>love</i></b> page</a>
+    </p>
 </body>
 </html>
