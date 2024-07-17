@@ -30,34 +30,23 @@
             font-size: 1.2em;
             margin-bottom: 20px;
         }
-        .link-text {
-            text-align: left;
-            width: 80%;
-        }
-        a {
-            color: #ffffff; /* White text for contrast */
-            text-decoration: none;
-            cursor: pointer;
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
     <script>
-        function askForPassword() {
-            var password = prompt("Please enter the password:");
-            if (password === "teamocaro") {
-                sessionStorage.setItem("authenticated", "true");
-                window.location.href = "lovepage.html";
-            } else {
-                alert("Incorrect password. Access denied.");
+        // Redirect if user hasn't authenticated
+        window.onload = function() {
+            if (sessionStorage.getItem("authenticated") !== "true") {
+                window.location.href = "index.html";
             }
-        }
+        };
     </script>
 </head>
 <body>
     <h1>snaman.xyz</h1>
     <hr>
-    <p>welcome to my web site, the purpose of this site is to learn, experiment and have fun./p>
-    <p class="link-text">
-        <a onclick="askForPassword()">- Go to <b><i>love</i></b> page</a>
-    </p>
+    <img src="image.jpg">
 </body>
 </html>
